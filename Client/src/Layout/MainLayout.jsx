@@ -1,15 +1,18 @@
+import React from "react"
+import { Outlet } from "react-router";
 
-export default function MainLayout () {
+
+export default function MainLayout (/*{children}*/) {
     return(
         <>
             <header>
                 <NavBar/>
             </header>
 
-            <article>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet consectetur ad minima qui consequuntur asperiores culpa,
-                    <br/> suscipit fugit facere architecto alias assumenda illum error quis voluptatem incidunt molestias ut? Doloremque!</p>
-            </article>
+            <main>
+                {/* Component from react router */}
+                <Outlet />
+            </main>
 
             <footer>
                 <Footer/>
@@ -21,13 +24,15 @@ export default function MainLayout () {
 function NavBar () {
     return (
         <div>
-            
+            <h1>Vicente Dauvergne</h1>
         </div>
     )
 }
 
 function Footer () {
     return(
-        <div></div>
+        <div>
+            <h2>Vicente Dauvergne</h2>
+        </div>
     )
 }
